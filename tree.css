@@ -1,0 +1,14 @@
+ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.node-component > .key, .node-component > .value {
+    display: inline-block;
+    vertical-align: top;
+}
+
+li > div {
+    padding-left: 10px;
+}

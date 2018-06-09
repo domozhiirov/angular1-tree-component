@@ -1,0 +1,29 @@
+<ul class="node-component">
+    <div class="key">
+        <label>
+            <input ng-init="checked = true" ng-model="checked" type="checkbox"/>
+        </label>
+    </div>
+    <div class="value">
+        <div ng-hide="checked">&#123;...&#125;</div>
+        <li ng-show="checked" ng-repeat="element in $ctrl.data">
+            <ul>&#123;
+                <li ng-repeat="(key, value) in element" ng-switch="value | typeof">
+                    <div ng-switch-when="string">
+                        <div>{{value}}</div>
+                    </div>
+                    <div ng-switch-when="number">
+                        <div>{{value}}</div>
+                    </div>
+                    <div class="row" ng-switch-when="object">
+                        <div>
+                            <node-component data="value"></node-component>
+                        </div>
+                    </div>
+
+                </li>
+                &#125;
+            </ul>
+        </li>
+    </div>
+</ul>
